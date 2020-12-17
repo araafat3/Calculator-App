@@ -5,6 +5,7 @@ class NumberDisplay extends StatelessWidget {
 
   final String value;
 
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,6 +15,7 @@ class NumberDisplay extends StatelessWidget {
             Text(
               value,
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              key:Key('K'),
             ),
           ],
           mainAxisAlignment: MainAxisAlignment.end,

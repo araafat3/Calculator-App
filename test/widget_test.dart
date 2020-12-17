@@ -11,20 +11,41 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluttercalculatorapp/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('mathmatical equation +', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
+    final testKey = Key('K');
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    var button1 = find.text("9");
+    expect(button1,findsOneWidget);
+    await tester.tap(button1);
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    var button2 = find.text("9");
+    expect(button2,findsOneWidget);
+    await tester.tap(button2);
+    await tester.pump();
+
+    var buttonPlus = find.text("+");
+    expect(buttonPlus,findsOneWidget);
+    await tester.tap(buttonPlus);
+    await tester.pump();
+
+    var buttonEqual = find.text("=");
+    expect(buttonEqual,findsOneWidget);
+    await tester.tap(buttonEqual);
+    await tester.pump();
+
+
+
+
+
+
+
+
+    var text = find.byKey(testKey);
+    expect(text, findsOneWidget);
+    expect(find.text("18"), findsOneWidget);
+
   });
 }
